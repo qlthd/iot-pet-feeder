@@ -1,0 +1,37 @@
+<html>
+<link rel="stylesheet" type="text/css" href="./style.css"  />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	<div class="center">
+		<form method="post" action="/nbPortions">
+		<label for="portions-selector" id="labelPortions" >How many portions ? </label>
+		<select id="portions-selector" name="ps">
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+		</select>
+		<button id="send" class="btn btn-success" name="button"> Feed </button> <span id="numberF"></span>
+		</form>
+	</div>
+</html>
+
+<script>
+ document
+    .querySelector('button')
+    .addEventListener('click', async function () {
+
+    	const feedP = document.querySelector('#portions-selector').value
+    	document.querySelector('#numberF').textContent = feedP
+    	//sendPortions(feedP)
+   });
+
+
+</script>

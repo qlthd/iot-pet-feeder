@@ -1,17 +1,60 @@
 <html>
-<link rel="stylesheet" type="text/css" href="./style.css"  />
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<head>
+	<base href="/">
+	<link src="/css/style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<br/>
 	<div class="center">
-	<h1> Pet Feeder </h1>
+	<h1> Web Interface for Pet Feeder </h1>
+		<br/>
+		<img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Cat_silhouette.svg" height="200"/>
+		<img src="https://image.flaticon.com/icons/png/512/91/91544.png" height="200" />
 	</div>
-
+	<br/>
 	<div class="center">
 		<input type="submit" class="btn btn-primary" value="Feed your pet" onclick="window.location='/portions';" /> 
-		<input type="submit" class="btn btn-success" value="Manage feeding schedules" onclick="window.location='/portions';" /> 
-		<input type="submit" class="btn btn-danger" value="Print logs" onclick="window.location='/portions';" /> 
+		<input type="submit" class="btn btn-success" value="Manage feeding schedules" onclick="window.location='/feedscheduler';" />
+		<input type="submit" class="btn btn-danger" value="Print logs" onclick="window.location='/movesensorslog';" />
 		
 	</div>
 
 
 </html>
+
+
+
+
+<style>
+
+	@import url('https://fonts.googleapis.com/css?family=Lexend+Deca');
+
+	.center{
+		margin : auto;
+		text-align: center;
+	}
+
+	.center input {
+		font-size: 25px;
+		padding : 15px;
+		margin : 5px;
+	}
+
+	.center h1{
+		font-family : 'Lexend Deca';
+	}
+
+
+
+
+	#labelPortions {
+		font-size : 35px;
+	}
+
+
+	#portions-selector {
+		font-size: 35px;
+	}
+
+</style>

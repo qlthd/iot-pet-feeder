@@ -7,6 +7,6 @@ var client  = mqtt.connect('mqtt://192.168.8.108');
 	setInterval(function() {
 		client.publish('nbPortions',"5");
 		console.log('Message Sent');
-	}, 5000);
+	}, 1000);
 
 	});

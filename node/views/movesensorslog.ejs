@@ -1,0 +1,41 @@
+<img src="https://static.thenounproject.com/png/423483-200.png" height="75" onclick="window.location='/';"/>
+
+<div class="center">
+    <% movements.forEach(function(m) { %>
+        <div class="schedules">
+            <br/>
+            <%= "Movement detected on "+m.day+" at "+m.hour+"." %>
+            <br/>
+        </div>
+    <% }) %>
+</div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Lexend+Deca');
+
+    .center h1{
+        font-family : 'Lexend Deca';
+    }
+
+    div * {
+        margin : 5px;
+    }
+
+    .form-control{
+        display : inline !important;
+        width : 25% !important;
+    }
+
+    .center{
+        margin : auto;
+        text-align: center;
+    }
+
+    .center input{
+        width : 20%;
+    }
+
+    .schedules{
+        font-size: 30px;
+    }
+</style>

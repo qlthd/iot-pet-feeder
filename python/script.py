@@ -2,10 +2,31 @@ import paho.mqtt.client as mqtt #import the client1
 import time
 import datetime
 import json
+import socket
+from threading import Thread
+import datetime
 
 def turn_turbine(nb):
-	for i in range(1,int(nb)) :
+	for i in range(0,int(nb)) :
 		print("Tourne !")
+
+def printTask():
+    while True:
+        currentDT = datetime.datetime.now()
+        current = { "day": str(currentDT.day)+"/"+str(currentDT.month)+"/"+str(currentDT.year), "hour": str(currentDT.hour)+":"+str(currentDT.minute) }
+        list=json.loads(read_feed_schedule())
+        for item in list:
+            if(item['hour'] == current['hour'] and item['day'] == current['day']):
+                turn_turbine(item['portions'])
+        time.sleep(60)
+
+
+
+def printTask2():
+    while True:
+        #print("2 !")
+        time.sleep(2)
+
 
 def on_connect(client, userdata, flags, rc):
      print("Connected flags"+str(flags)+"result code "\
@@ -85,7 +106,10 @@ def on_message(client, userdata, message):
 
 
 def main():
-    broker_address="192.168.8.107"
+    Thread(target = printTask).start()
+    Thread(target = printTask2).start()
+
+    broker_address=socket.gethostbyname('localhost')
     global client
     client = mqtt.Client("rasp") #create new instance
     client.on_connect = on_connect
@@ -98,6 +122,7 @@ def main():
     client.subscribe("schedules/delete")
     client.subscribe("sensor/get")
     client.loop_forever()
+
 if __name__ == "__main__":
     main()
 
